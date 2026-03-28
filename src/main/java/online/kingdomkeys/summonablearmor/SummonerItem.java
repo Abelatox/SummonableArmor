@@ -18,7 +18,6 @@ import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import online.kingdomkeys.summonablearmor.client.SummonerMenu;
 import online.kingdomkeys.summonablearmor.client.SummonerInventory;
-import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 import java.util.UUID;
@@ -34,7 +33,7 @@ public class SummonerItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
-
+        Utils.clearArmor(player, stack);
         if (!level.isClientSide) {
             MenuProvider container = new SimpleMenuProvider((w, p, pl) -> new SummonerMenu(w, p, stack), stack.getHoverName());
             player.openMenu(container, buf -> {

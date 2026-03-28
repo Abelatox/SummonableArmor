@@ -52,6 +52,8 @@ public class SummonableArmor {
         if (FMLEnvironment.dist.isClient()) {
             modEventBus.addListener(ModMenus::registerGUIFactories);
         }
+
+        NeoForge.EVENT_BUS.register(new EntityEvents());
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {

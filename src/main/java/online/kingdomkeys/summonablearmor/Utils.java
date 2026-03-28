@@ -57,6 +57,8 @@ public class Utils {
     public static void armourTick(ItemStack stack, Entity entity, Level level, int slot) {
         if (entity instanceof Player player && !level.isClientSide) {
             ItemStack armorItem = Utils.findBestSummonItem(player);
+            if(armorItem == null)
+                return;
             UUID armorUUID = armorItem.getItem() != null ? Utils.getArmorID(armorItem) : null;
 
             if (Utils.hasArmorID(stack)) {
@@ -72,6 +74,20 @@ public class Utils {
         }
     }
 
+    public static void clearArmor(Player player, ItemStack stack) {
+        if(hasArmorID(stack)){
+            UUID id = getArmorID(stack);
+            for(int i=36;i<40;i++) {
+                ItemStack armorStack = player.getInventory().getItem(i);
+                if (hasArmorID(armorStack)){
+                    if(getArmorID(armorStack).equals(id)){
+                        player.getInventory().setItem(i, ItemStack.EMPTY);
+                    }
+                }
+            }
+        }
+
+    }
     public static void desummonArmour(Player player, ItemStack stack, int slot, boolean sameUUID, boolean playSound) {
         if (sameUUID) {
             SummonerInventory summonerInventory = (SummonerInventory) Utils.findBestSummonItem(player).getCapability(Capabilities.ItemHandler.ITEM);

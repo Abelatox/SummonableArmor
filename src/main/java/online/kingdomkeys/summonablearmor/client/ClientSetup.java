@@ -63,5 +63,7 @@ public class ClientSetup {
         SummonableArmor.LOGGER.info("HELLO FROM CLIENT SETUP");
         SummonableArmor.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         NeoForge.EVENT_BUS.register(new InputHandler());
+        NeoForge.EVENT_BUS.register(new ClientEvents());
+
     }
 }
