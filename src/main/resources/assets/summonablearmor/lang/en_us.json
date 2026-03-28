@@ -1,13 +1,13 @@
 {
-  "itemGroup.summonablearmor": "Example Mod Tab",
-  "block.summonablearmor.example_block": "Example Block",
-  "item.summonablearmor.example_item": "Example Item",
+  "itemGroup.summonablearmor": "Summonable Armor",
+  "item.summonablearmor.armor_summoner": "Armor Summoner",
+  "key.summonablearmor": "Summonable Armor",
+  "key.summonablearmor.summon": "Summon armor",
 
-  "summonablearmor.configuration.title": "SummonableArmor Configs",
-  "summonablearmor.configuration.section.summonablearmor.common.toml": "SummonableArmor Configs",
-  "summonablearmor.configuration.section.summonablearmor.common.toml.title": "SummonableArmor Configs",
-  "summonablearmor.configuration.items": "Item List",
-  "summonablearmor.configuration.logDirtBlock": "Log Dirt Block",
-  "summonablearmor.configuration.magicNumberIntroduction": "Magic Number Text",
-  "summonablearmor.configuration.magicNumber": "Magic Number"
+  "summonablearmor.notenoughspace": "Not enough space",
+
+  "summonablearmor.helmet": "Helmet",
+  "summonablearmor.chestplate": "Chestplate",
+  "summonablearmor.leggings": "Leggings",
+  "summonablearmor.boots": "Boots"
 }

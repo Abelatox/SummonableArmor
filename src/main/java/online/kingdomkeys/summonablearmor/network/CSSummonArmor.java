@@ -70,14 +70,15 @@ public record CSSummonArmor(boolean forceDesummon) implements Packet {
 
     private static void spawnArmorParticles(Player summoner) {
         Vec3 userPos = new Vec3(summoner.getX(), summoner.getY(), summoner.getZ());
-        ((ServerLevel)summoner.level()).sendParticles(ParticleTypes.FIREWORK, userPos.x, summoner.getY() + 1, userPos.z, 300, 0,0,0, 0.2);
+        ((ServerLevel)summoner.level()).sendParticles(ParticleTypes.FIREWORK, userPos.x, summoner.getY() + 1, userPos.z, 100, 0,0,0, 0.2);
     }
 
     @Override
     public void handle(IPayloadContext context) {
         Player player = context.player();
-
         ItemStack kbArmorItem = Utils.findBestSummonItem(player);
+        if(kbArmorItem == null)
+            return;
         if(ItemStack.isSameItem(kbArmorItem, ItemStack.EMPTY))
             return;
 
@@ -119,13 +120,13 @@ public record CSSummonArmor(boolean forceDesummon) implements Packet {
                     for(int i=36;i<40;i++) {
                         Utils.desummonArmour(player, player.getInventory().getItem(i), i, true, false);
                     }
-                    player.level().playSound(null, player.position().x(),player.position().y(),player.position().z(), SoundEvents.ARMOR_EQUIP_GOLD, SoundSource.MASTER, 0.3f, 1.0f);
+                    player.level().playSound(null, player.position().x(),player.position().y(),player.position().z(), SoundEvents.ARMOR_EQUIP_NETHERITE, SoundSource.MASTER, 1f, 1.0f);
                 } else {
                     //If it's wearing any armor unequip it
                     if(!(armor[0].getItem() == Items.AIR && armor[1].getItem() == Items.AIR && armor[2].getItem() == Items.AIR && armor[3].getItem() == Items.AIR)) {
 
                         if(checkAllArmorSlots(player, KBArmorUUID)) {
-                            player.level().playSound(null, player.position().x(),player.position().y(),player.position().z(), SoundEvents.ARMOR_EQUIP_GOLD, SoundSource.MASTER, 0.3f, 1.0f);
+                            player.level().playSound(null, player.position().x(),player.position().y(),player.position().z(), SoundEvents.ARMOR_EQUIP_NETHERITE, SoundSource.MASTER, 1f, 1.0f);
                         }
 
                         armor = new ItemStack[]{player.getInventory().getArmor(3),player.getInventory().getArmor(2),player.getInventory().getArmor(1),player.getInventory().getArmor(0)};
@@ -154,7 +155,7 @@ public record CSSummonArmor(boolean forceDesummon) implements Packet {
                         armor = new ItemStack[]{player.getInventory().getArmor(3),player.getInventory().getArmor(2),player.getInventory().getArmor(1),player.getInventory().getArmor(0)};
 
                         if(armor[0].getItem() != Items.AIR || armor[1].getItem() != Items.AIR || armor[2].getItem() != Items.AIR || armor[3].getItem() != Items.AIR) {
-                            player.displayClientMessage(Component.translatable("gui.summonarmor.notenoughspace"), true);
+                            player.displayClientMessage(Component.translatable(SummonableArmor.MODID+".notenoughspace"), true);
                         }
                     }
 
@@ -168,7 +169,7 @@ public record CSSummonArmor(boolean forceDesummon) implements Packet {
                         player.getInventory().setItem(38, newChestplate);
                         player.getInventory().setItem(37, newLeggings);
                         player.getInventory().setItem(36, newBoots);
-                        player.level().playSound(null, player.position().x(),player.position().y(),player.position().z(), SoundEvents.ARMOR_EQUIP_GOLD, SoundSource.MASTER, 0.2f, 1.0f);
+                        player.level().playSound(null, player.position().x(),player.position().y(),player.position().z(), SoundEvents.ARMOR_EQUIP_NETHERITE, SoundSource.MASTER, 1f, 1.0f);
                         spawnArmorParticles(player);
                     }
                 }

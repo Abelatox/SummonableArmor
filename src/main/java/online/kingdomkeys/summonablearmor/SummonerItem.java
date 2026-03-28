@@ -35,7 +35,6 @@ public class SummonerItem extends Item {
         ItemStack stack = player.getItemInHand(hand);
 
         if (!level.isClientSide) {
-          //  PacketHandler.sendTo(new SCSyncPlayerData(player), (ServerPlayer)player);
             MenuProvider container = new SimpleMenuProvider((w, p, pl) -> new SummonerMenu(w, p, stack), stack.getHoverName());
             player.openMenu(container, buf -> {
                 buf.writeBoolean(hand == InteractionHand.MAIN_HAND);
@@ -69,16 +68,16 @@ public class SummonerItem extends Item {
             return;
 
         if (!pauldronInventory.getStackInSlot(0).isEmpty()) {
-            tooltip.add(Component.literal(Component.translatable("kingdomkeys.helmet").getString() + ": " + pauldronInventory.getStackInSlot(0).getHoverName().getString()));
+            tooltip.add(Component.literal(Component.translatable(SummonableArmor.MODID+".helmet").getString() + ": " + pauldronInventory.getStackInSlot(0).getHoverName().getString()));
         }
         if (!pauldronInventory.getStackInSlot(1).isEmpty()) {
-            tooltip.add(Component.literal(Component.translatable("kingdomkeys.chestplate").getString() + ": " + pauldronInventory.getStackInSlot(1).getHoverName().getString()));
+            tooltip.add(Component.literal(Component.translatable(SummonableArmor.MODID+".chestplate").getString() + ": " + pauldronInventory.getStackInSlot(1).getHoverName().getString()));
         }
         if (!pauldronInventory.getStackInSlot(2).isEmpty()) {
-            tooltip.add(Component.literal(Component.translatable("kingdomkeys.leggings").getString() + ": " + pauldronInventory.getStackInSlot(2).getHoverName().getString()));
+            tooltip.add(Component.literal(Component.translatable(SummonableArmor.MODID+".leggings").getString() + ": " + pauldronInventory.getStackInSlot(2).getHoverName().getString()));
         }
         if (!pauldronInventory.getStackInSlot(3).isEmpty()) {
-            tooltip.add(Component.literal(Component.translatable("kingdomkeys.boots").getString() + ": " + pauldronInventory.getStackInSlot(3).getHoverName().getString()));
+            tooltip.add(Component.literal(Component.translatable(SummonableArmor.MODID+".boots").getString() + ": " + pauldronInventory.getStackInSlot(3).getHoverName().getString()));
         }
         if (flagIn.isAdvanced()) {
             if (stack.has(ModComponents.ARMOR_ID)) {

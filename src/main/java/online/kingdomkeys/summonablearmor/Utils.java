@@ -1,5 +1,7 @@
 package online.kingdomkeys.summonablearmor;
 
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -66,7 +68,7 @@ public class Utils {
         }
         player.getInventory().setItem(slot, ItemStack.EMPTY);
         if (playSound) {
-            //player.level().playSound(null, player.position().x(), player.position().y(), player.position().z(), ModSounds.unsummon.get(), SoundSource.MASTER, 1.0f, 1.0f);
+            player.level().playSound(null, player.position().x(),player.position().y(),player.position().z(), SoundEvents.ARMOR_EQUIP_NETHERITE, SoundSource.MASTER, 1f, 1.0f);
         }
     }
 

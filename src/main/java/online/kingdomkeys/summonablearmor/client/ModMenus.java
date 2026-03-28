@@ -32,7 +32,7 @@ public class ModMenus {
     }
 
     public static void registerCapabilities(RegisterCapabilitiesEvent event) {
-        event.registerItem(Capabilities.ItemHandler.ITEM, (object, context) -> new SummonerInventory(object), ModItems.summoner.get());
+        event.registerItem(Capabilities.ItemHandler.ITEM, (object, context) -> new SummonerInventory(object), ModItems.armorSummoner.get());
     }
 
 }

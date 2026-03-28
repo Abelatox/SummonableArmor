@@ -26,7 +26,7 @@ public class ClientSetup {
         public final String translationKey;
 
         Keybinds(String name, int defaultKey) {
-            keybinding = new KeyMapping(name, defaultKey, "key." + SummonableArmor.MODID + ".force");
+            keybinding = new KeyMapping(name, defaultKey, "key." + SummonableArmor.MODID);
             translationKey = name;
         }
 
@@ -54,9 +54,6 @@ public class ClientSetup {
     }
 
     public ClientSetup(ModContainer container) {
-        // Allows NeoForge to create a config screen for this mod's configs.
-        // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
-        // Do not forget to add translations for your config options to the en_us.json file.
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
 

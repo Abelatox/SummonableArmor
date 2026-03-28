@@ -9,8 +9,6 @@ import online.kingdomkeys.summonablearmor.network.PacketHandler;
 public class InputHandler {
     Minecraft mc;
 
-    public static boolean forceSense = false;
-
     public InputHandler(){
         mc = Minecraft.getInstance();
     }

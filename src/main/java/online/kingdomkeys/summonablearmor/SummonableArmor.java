@@ -30,9 +30,9 @@ public class SummonableArmor {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.summonablearmor"))
             .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> ModItems.summoner.get().getDefaultInstance())
+            .icon(() -> ModItems.armorSummoner.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(ModItems.summoner.get());
+                output.accept(ModItems.armorSummoner.get());
             }).build());
 
     public SummonableArmor(IEventBus modEventBus, ModContainer modContainer) {
