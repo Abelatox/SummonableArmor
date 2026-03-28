@@ -18,6 +18,7 @@ import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import online.kingdomkeys.summonablearmor.client.SummonerMenu;
 import online.kingdomkeys.summonablearmor.client.SummonerInventory;
+import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 import java.util.UUID;
@@ -91,4 +92,5 @@ public class SummonerItem extends Item {
     public boolean canGrindstoneRepair(ItemStack stack) {
         return isFoil(stack);
     }
+
 }

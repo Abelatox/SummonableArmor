@@ -10,17 +10,46 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import online.kingdomkeys.summonablearmor.client.SummonerInventory;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
+import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
+import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
+import java.util.Optional;
 import java.util.UUID;
 
 public class Utils {
 
     public static ItemStack findBestSummonItem(Player player) {
-        for(ItemStack a : player.getInventory().items){
-            if(a.getItem() instanceof SummonerItem sa){
-                return a;
+        Optional<ICuriosItemHandler> curiosOpt = CuriosApi.getCuriosInventory(player);
+
+        if (curiosOpt.isPresent()) {
+            ICuriosItemHandler curiosInv = curiosOpt.get();
+
+            Optional<ICurioStacksHandler> handler = curiosInv.getStacksHandler("summonablearmor");
+
+            if (handler != null) {
+                IDynamicStackHandler stacks = handler.get().getStacks();
+
+                for (int i = 0; i < stacks.getSlots(); i++) {
+                    ItemStack stack = stacks.getStackInSlot(i);
+
+                    if (stack.getItem() instanceof SummonerItem) {
+                        return stack;
+                    }
+                }
+            }
+
+
+        }
+
+        // If not in Curios fallback to inventory
+        for (ItemStack stack : player.getInventory().items) {
+            if (stack.getItem() instanceof SummonerItem) {
+                return stack;
             }
         }
+
         return null;
     }
 
