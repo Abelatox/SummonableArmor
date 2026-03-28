@@ -1,0 +1,13 @@
+{
+  "itemGroup.summonablearmor": "Example Mod Tab",
+  "block.summonablearmor.example_block": "Example Block",
+  "item.summonablearmor.example_item": "Example Item",
+
+  "summonablearmor.configuration.title": "SummonableArmor Configs",
+  "summonablearmor.configuration.section.summonablearmor.common.toml": "SummonableArmor Configs",
+  "summonablearmor.configuration.section.summonablearmor.common.toml.title": "SummonableArmor Configs",
+  "summonablearmor.configuration.items": "Item List",
+  "summonablearmor.configuration.logDirtBlock": "Log Dirt Block",
+  "summonablearmor.configuration.magicNumberIntroduction": "Magic Number Text",
+  "summonablearmor.configuration.magicNumber": "Magic Number"
+}
