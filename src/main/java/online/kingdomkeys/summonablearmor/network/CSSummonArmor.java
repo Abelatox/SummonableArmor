@@ -148,7 +148,6 @@ public record CSSummonArmor(boolean forceDesummon) implements Packet {
                                 }
                             }
                         } else { //If player has more armor to swap than free slots
-                            //complain
                             hasRoom = false;
                         }
 

@@ -12,7 +12,7 @@ public class ClientEvents {
     @SubscribeEvent
     public void clientTickPre(ItemTooltipEvent event) {
         if(event.getItemStack().has(ModComponents.ARMOR_ID)){
-            event.getToolTip().set(1,Component.literal(ChatFormatting.GOLD+"SUMMONED"));
+            event.getToolTip().add(1,Component.literal(ChatFormatting.GOLD+"SUMMONED"));
         }
     }
 
