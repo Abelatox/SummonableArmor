@@ -8,40 +8,25 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import online.kingdomkeys.summonablearmor.client.SummonerInventory;
-import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
-import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
-import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
-
-import java.util.Optional;
+import online.kingdomkeys.summonablearmor.integration.CuriosCompat;
 import java.util.UUID;
 
 public class Utils {
 
     public static ItemStack findBestSummonItem(Player player) {
-        Optional<ICuriosItemHandler> curiosOpt = CuriosApi.getCuriosInventory(player);
-
-        if (curiosOpt.isPresent()) {
-            ICuriosItemHandler curiosInv = curiosOpt.get();
-
-            Optional<ICurioStacksHandler> handler = curiosInv.getStacksHandler("summonablearmor");
-
-            if (handler != null) {
-                IDynamicStackHandler stacks = handler.get().getStacks();
-
-                for (int i = 0; i < stacks.getSlots(); i++) {
-                    ItemStack stack = stacks.getStackInSlot(i);
-
-                    if (stack.getItem() instanceof SummonerItem) {
-                        return stack;
-                    }
-                }
-            }
-
-
+        //If curios is loaded
+        ItemStack best = null;
+        if (ModList.get().isLoaded("curios")) {
+            try {
+                best = CuriosCompat.findInCurios(player);
+            } catch (Throwable ignored) {}
         }
+
+        if(best != null) //If curios had one return it
+            return best;
 
         // If not in Curios fallback to inventory
         for (ItemStack stack : player.getInventory().items) {
