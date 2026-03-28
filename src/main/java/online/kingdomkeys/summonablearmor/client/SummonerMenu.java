@@ -11,17 +11,17 @@ import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import online.kingdomkeys.summonablearmor.PauldronSlot;
 
-public class PauldronMenu extends AbstractContainerMenu {
+public class SummonerMenu extends AbstractContainerMenu {
 
-    public static PauldronMenu fromNetwork(int windowId, Inventory inv, FriendlyByteBuf buf) {
+    public static SummonerMenu fromNetwork(int windowId, Inventory inv, FriendlyByteBuf buf) {
         InteractionHand hand = buf.readBoolean() ? InteractionHand.MAIN_HAND : InteractionHand.OFF_HAND;
-        return new PauldronMenu(windowId, inv, inv.player.getItemInHand(hand));
+        return new SummonerMenu(windowId, inv, inv.player.getItemInHand(hand));
     }
 
     public final ItemStack pauldron;
     public final IItemHandlerModifiable pauldronInv;
 
-    public PauldronMenu(int windowId, Inventory playerInv, ItemStack pauldron) {
+    public SummonerMenu(int windowId, Inventory playerInv, ItemStack pauldron) {
         super(ModMenus.PAULDRON.get(), windowId);
         this.pauldron = pauldron;
         int i, j;

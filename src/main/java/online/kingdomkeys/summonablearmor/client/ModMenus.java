@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 public class ModMenus {
     public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(BuiltInRegistries.MENU, SummonableArmor.MODID);
 
-    public static final Supplier<MenuType<PauldronMenu>> PAULDRON = createMenu("pauldron", PauldronMenu::fromNetwork);
+    public static final Supplier<MenuType<SummonerMenu>> PAULDRON = createMenu("pauldron", SummonerMenu::fromNetwork);
 
     public static <M extends AbstractContainerMenu> Supplier<MenuType<M>> createMenu(String name, IContainerFactory<M> container) {
         return MENUS.register(name, () -> new MenuType<>(container, FeatureFlags.DEFAULT_FLAGS));
@@ -28,11 +28,11 @@ public class ModMenus {
 
     @OnlyIn(Dist.CLIENT)
     public static void registerGUIFactories(RegisterMenuScreensEvent event) {
-        event.register(ModMenus.PAULDRON.get(), PauldronScreen::new);
+        event.register(ModMenus.PAULDRON.get(), SummonerScreen::new);
     }
 
     public static void registerCapabilities(RegisterCapabilitiesEvent event) {
-        event.registerItem(Capabilities.ItemHandler.ITEM, (object, context) -> new SummonerInventory(object), ModItems.terra_Shoulder.get());
+        event.registerItem(Capabilities.ItemHandler.ITEM, (object, context) -> new SummonerInventory(object), ModItems.summoner.get());
     }
 
 }

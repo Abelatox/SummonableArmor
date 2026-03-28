@@ -1,6 +1,5 @@
 package online.kingdomkeys.summonablearmor;
 
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -16,7 +15,7 @@ public class Utils {
 
     public static ItemStack findBestSummonItem(Player player) {
         for(ItemStack a : player.getInventory().items){
-            if(a.getItem() instanceof PauldronItem sa){
+            if(a.getItem() instanceof SummonerItem sa){
                 return a;
             }
         }
@@ -72,7 +71,7 @@ public class Utils {
     }
 
     public static boolean hasArmorID(ItemStack stack) {
-        if (stack.getItem() instanceof PauldronItem || stack.getItem() instanceof ArmorItem) {
+        if (stack.getItem() instanceof SummonerItem || stack.getItem() instanceof ArmorItem) {
             return stack.has(ModComponents.ARMOR_ID);
         }
         return false;

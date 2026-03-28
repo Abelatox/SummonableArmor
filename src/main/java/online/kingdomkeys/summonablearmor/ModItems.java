@@ -10,7 +10,7 @@ public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(SummonableArmor.MODID);
 
     public static final Supplier<Item>
-            terra_Shoulder = createNewItem(Strings.terra_Shoulder, () -> new PauldronItem(new Item.Properties().stacksTo(1), Strings.terra_Shoulder));
+            summoner = createNewItem(Strings.summoner, () -> new SummonerItem(new Item.Properties().stacksTo(1), Strings.summoner));
 
     public static <T extends Item> Supplier<T> createNewItem(String name, Supplier<? extends T> item) {
         return ITEMS.register(name, item);

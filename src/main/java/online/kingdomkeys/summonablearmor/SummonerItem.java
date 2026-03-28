@@ -16,16 +16,16 @@ import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.capabilities.Capabilities;
-import online.kingdomkeys.summonablearmor.client.PauldronMenu;
+import online.kingdomkeys.summonablearmor.client.SummonerMenu;
 import online.kingdomkeys.summonablearmor.client.SummonerInventory;
 
 import java.util.List;
 import java.util.UUID;
 
-public class PauldronItem extends Item {
+public class SummonerItem extends Item {
     String textureName;
 
-    public PauldronItem(Properties properties, String textureName) {
+    public SummonerItem(Properties properties, String textureName) {
         super(properties);
         this.textureName = textureName;
     }
@@ -36,7 +36,7 @@ public class PauldronItem extends Item {
 
         if (!level.isClientSide) {
           //  PacketHandler.sendTo(new SCSyncPlayerData(player), (ServerPlayer)player);
-            MenuProvider container = new SimpleMenuProvider((w, p, pl) -> new PauldronMenu(w, p, stack), stack.getHoverName());
+            MenuProvider container = new SimpleMenuProvider((w, p, pl) -> new SummonerMenu(w, p, stack), stack.getHoverName());
             player.openMenu(container, buf -> {
                 buf.writeBoolean(hand == InteractionHand.MAIN_HAND);
             });

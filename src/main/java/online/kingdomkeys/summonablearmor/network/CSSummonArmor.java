@@ -17,7 +17,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 import online.kingdomkeys.summonablearmor.ModComponents;
-import online.kingdomkeys.summonablearmor.PauldronItem;
+import online.kingdomkeys.summonablearmor.SummonerItem;
 import online.kingdomkeys.summonablearmor.SummonableArmor;
 import online.kingdomkeys.summonablearmor.Utils;
 import online.kingdomkeys.summonablearmor.client.SummonerInventory;
@@ -93,7 +93,7 @@ public record CSSummonArmor(boolean forceDesummon) implements Packet {
         if(kbArmorItem.getItem() == Items.AIR) //if empty abort
             return;
 
-        if(kbArmorItem.getItem() instanceof PauldronItem kbArmor) { //If it's a valid shoulder armor
+        if(kbArmorItem.getItem() instanceof SummonerItem kbArmor) { //If it's a valid shoulder armor
             UUID KBArmorUUID = kbArmorItem.get(ModComponents.ARMOR_ID);
             ItemStack[] armor = {player.getInventory().getArmor(3),player.getInventory().getArmor(2),player.getInventory().getArmor(1),player.getInventory().getArmor(0)};
 

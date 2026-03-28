@@ -15,14 +15,14 @@ import online.kingdomkeys.summonablearmor.SummonableArmor;
 
 import java.util.Set;
 
-public class PauldronScreen extends AbstractContainerScreen<PauldronMenu> {
+public class SummonerScreen extends AbstractContainerScreen<SummonerMenu> {
 
-    PauldronMenu menu;
+    SummonerMenu menu;
 
     private float xMouse;
     private float yMouse;
 
-    public PauldronScreen(PauldronMenu menu, Inventory pPlayerInventory, Component title) {
+    public SummonerScreen(SummonerMenu menu, Inventory pPlayerInventory, Component title) {
         super(menu, pPlayerInventory, title);
         minecraft = Minecraft.getInstance();
         this.menu = menu;
