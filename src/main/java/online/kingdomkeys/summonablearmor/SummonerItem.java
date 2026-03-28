@@ -16,8 +16,8 @@ import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.capabilities.Capabilities;
-import online.kingdomkeys.summonablearmor.client.SummonerMenu;
 import online.kingdomkeys.summonablearmor.client.SummonerInventory;
+import online.kingdomkeys.summonablearmor.client.SummonerMenu;
 
 import java.util.List;
 import java.util.UUID;

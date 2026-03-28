@@ -6,8 +6,6 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import online.kingdomkeys.summonablearmor.ModComponents;
 
-import java.awt.*;
-
 public class ClientEvents {
     @SubscribeEvent
     public void clientTickPre(ItemTooltipEvent event) {

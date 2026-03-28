@@ -17,8 +17,8 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 import online.kingdomkeys.summonablearmor.ModComponents;
-import online.kingdomkeys.summonablearmor.SummonerItem;
 import online.kingdomkeys.summonablearmor.SummonableArmor;
+import online.kingdomkeys.summonablearmor.SummonerItem;
 import online.kingdomkeys.summonablearmor.Utils;
 import online.kingdomkeys.summonablearmor.client.SummonerInventory;
 

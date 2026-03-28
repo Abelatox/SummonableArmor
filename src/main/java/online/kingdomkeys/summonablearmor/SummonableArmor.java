@@ -1,24 +1,22 @@
 package online.kingdomkeys.summonablearmor;
 
-import net.neoforged.fml.loading.FMLEnvironment;
-import online.kingdomkeys.summonablearmor.client.ModMenus;
-import org.slf4j.Logger;
-
 import com.mojang.logging.LogUtils;
-
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import online.kingdomkeys.summonablearmor.client.ModMenus;
+import org.slf4j.Logger;
 
 @Mod(SummonableArmor.MODID)
 public class SummonableArmor {

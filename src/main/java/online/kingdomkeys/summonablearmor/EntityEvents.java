@@ -1,6 +1,5 @@
 package online.kingdomkeys.summonablearmor;
 
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.item.ItemEntity;
