@@ -25,7 +25,7 @@ public class SummonableArmor {
 
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> Creative_TAB = CREATIVE_MODE_TABS.register("creative_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.summonablearmor"))
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> ModItems.armorSummoner.get().getDefaultInstance())
