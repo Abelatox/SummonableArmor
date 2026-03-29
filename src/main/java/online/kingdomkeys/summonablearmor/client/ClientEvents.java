@@ -10,9 +10,9 @@ import online.kingdomkeys.summonablearmor.ModComponents;
 public class ClientEvents {
     @SubscribeEvent
     public void clientTickPre(ItemTooltipEvent event) {
-        if(event.getItemStack() != null && event.getItemStack().has(ModComponents.ARMOR_ID)){
+        if(event.getItemStack().has(ModComponents.ARMOR_ID)){
             if(event.getItemStack().getItem() instanceof ArmorItem) {
-                event.getToolTip().add(1, Component.literal(ChatFormatting.GOLD + "SUMMONED"));
+                event.getToolTip().add(1, Component.translatable("summonablearmor.summoned").withStyle(ChatFormatting.GOLD));
             }
         }
     }
