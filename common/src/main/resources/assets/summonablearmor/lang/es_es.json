@@ -1,0 +1,16 @@
+{
+  "itemGroup.summonablearmor": "Summonable Armor",
+  "curios.identifier.summonablearmor": "Armadura Invocable",
+  "accessories.slot.summonablearmor": "Armadura Invocable",
+  "item.summonablearmor.armor_summoner": "Invocador de armadura",
+  "key.summonablearmor": "Invocador de armadura",
+  "key.summonablearmor.summon": "Invocar armadura",
+
+  "summonablearmor.summoned": "INVOCADA",
+  "summonablearmor.notenoughspace": "No hay espacio libre",
+
+  "summonablearmor.helmet": "Casco",
+  "summonablearmor.chestplate": "Pechera",
+  "summonablearmor.leggings": "Grebas",
+  "summonablearmor.boots": "Botas"
+}

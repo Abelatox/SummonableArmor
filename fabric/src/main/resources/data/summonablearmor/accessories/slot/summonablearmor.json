@@ -1,0 +1,8 @@
+{
+  "amount": 1,
+  "icon": "summonablearmor:gui/slot/curios_slot",
+  "operation": "set",
+  "validators": [
+    "accessories:tag"
+  ]
+}
